@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>formular</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    </head>
+<body style="background-color: grey">
+    <div class="row">
+            <form action="" method="POST" class="col s6 card offset-s3 z-depth-5 #eceff1 blue-grey lighten-5" id="dox">
+                <div class="card-body">
+                            <div class="input-field col s8">
+                                <input type="text" name="N" id="N" class="validate">
+                                <label for="N">Total number of nodes</label>
+                            </div><br>
+                            <div class="input-field col s8">            
+                                <input type="text" name="B" id="B" class="validate">
+                                <label for="B">Infection of the virus</label>
+                            </div><br>
+                            <div class="input-field col s8">            
+                                <input type="text" name="D" id="D" class="validate">
+                                <label for="D">Density of Node Spread</label>
+                            </div><br>
+                            <div class="input-field col s8">            
+                                <input type="text" name="R" id="R" class="validate">
+                                <label for="R">Transmission range/Power</label>
+                            </div><br>
+                            <div class="input-field col s8">            
+                                <input type="text" name="T" id="T" class="validate">
+                                <label for="T">Time</label>
+                            </div><br>
+                            <div class="input-field col s8">
+                                <input class="btn waves-effect waves-light" type="submit" value="Submit" name="action"/>
+                            </div>
+                            
+                </div>                    
+                </form>
+    </div>
+    
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+<script>
+    var form = document.getElementById('dox');
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        var N = form.N.value,
+            B = form.B.value,
+            D = form.D.value,
+            R = form.R.value,
+            T = form.T.value;
+        var oshodi = Math.sqrt(N) - 1,
+            magodo = Math.sqrt(N) + 1;
+        var lekki = (oshodi/magodo)*Math.E;
+
+        var ojota = Math.pow(2*B*(Math.sqrt(D*(Math.PI*R))),3)*T;
+        var dolphin = ojota/Math.sqrt(N);
+
+        var mushin = 1 + lekki - dolphin; 
+        var lagos = Math.pow((N*((2/mushin) - 1)),2);                    
+        swal("Infected nodes at time (T) is: "+lagos.toString());            
+        form.reset();
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    
+</body>
+</html>
