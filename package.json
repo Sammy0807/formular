@@ -2,11 +2,15 @@
   "name": "formular",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
+  "homepage": "https://Sammy0807.github.io/formular",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^1.2.0"
+  }
 }
