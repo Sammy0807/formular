@@ -49,20 +49,12 @@
             D = form.D.value,
             R = form.R.value,
             T = form.T.value;
-        var oshodi = Math.sqrt(N) - 1,
-            magodo = Math.sqrt(N) + 1;
-        var lekki = (oshodi/magodo)*Math.E;
 
-        var ojota = Math.pow(2*B*(Math.sqrt(D*(Math.PI*R))),3)*T;
-        var dolphin = ojota/Math.sqrt(N);
-
-        var mushin = 1 + lekki - dolphin; 
-        var lagos = Math.pow((N*((2/mushin) - 1)),2);                    
+        var lagos = N*Math.pow(((2/(1+((Math.sqrt(N)-1)/(Math.sqrt(N)+1))*Math.E)-((2*B*Math.pow((Math.sqrt(D*Math.PI*R)),3)*T)/(Math.sqrt(N))))-1),2);                          
         swal("Infected nodes at time (T) is: "+lagos.toString());            
         form.reset();
     }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>    
 </body>
 </html>
